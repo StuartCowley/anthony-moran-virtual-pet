@@ -32,11 +32,20 @@ describe('growUp', () => {
     });  
 });
 describe('walk', () => {
-    it('increments the fitness by +4', () => {
+    it('increases the fitness by +4', () => {
           const petOne = new Pet('Fido');
+          petOne.fitness = 4;
           petOne.walk();
-          expect(petOne.fitness).toEqual(14);
-    });  
+          expect(petOne.fitness).toEqual(8);
+    }); 
+}); 
+describe('walk', () => {
+    it('increases the fitness to a MAX of 10', () => {
+        const petOne = new Pet('Fido');
+        petOne.fitness = 8;
+        petOne.walk();
+        expect(petOne.fitness).toEqual(10);
+    }); 
 });
 describe('constructor', () => {
     it('has an initial hunger of 0', () => {
