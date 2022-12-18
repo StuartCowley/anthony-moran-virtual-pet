@@ -38,6 +38,14 @@ describe('walk', () => {
           petOne.walk();
           expect(petOne.fitness).toEqual(8);
     }); 
+});
+describe('feed', () => {
+        it('decreases the hunger by 3', () => {
+              const petOne = new Pet('Fido');
+              petOne.hunger = 10;
+              petOne.feed();
+              expect(petOne.hunger).toEqual(7);
+        });     
 }); 
 describe('walk', () => {
     it('increases the fitness to a MAX of 10', () => {
@@ -58,4 +66,24 @@ describe('constructor', () => {
       const petOne = new Pet('Fido');
       expect(petOne.fitness).toEqual(10);
     });
+});
+describe('checkUp status', () => {
+    it('checks the health of the pet', () => {
+        const petOne = new Pet('Fido');
+        petOne.fitness = 0;
+        petOne.hunger = 1;
+        expect(petOne.fitness <= 3 && petOne.hunger <=5).toBe(true);
+        
+        petOne.fitness = 4;
+        petOne.hunger = 6;
+        expect(petOne.hunger >= 5 && petOne.fitness >=3).toBe(true);
+        
+        petOne.fitness = 2;
+        petOne.hunger = 6;
+        expect(petOne.fitness <= 3 && petOne.hunger >=5).toBe(true);
+       
+        petOne.fitness = 4;
+        petOne.hunger = 4;
+        expect(petOne.fitness >= 3 && petOne.hunger <=5).toBe(true);
+    }); 
 });
