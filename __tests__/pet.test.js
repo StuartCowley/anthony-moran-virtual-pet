@@ -40,11 +40,11 @@ describe('walk', () => {
     }); 
 });
 describe('feed', () => {
-        it('decreases the hunger by 3', () => {
+        xit('decreases the hunger by 3', () => {
               const petOne = new Pet('Fido');
-              petOne.hunger = 10;
+              petOne.hunger = 6;
               petOne.feed();
-              expect(petOne.hunger).toEqual(7);
+              expect(petOne.hunger).toEqual(3);
         });     
 }); 
 describe('walk', () => {
@@ -86,4 +86,13 @@ describe('checkUp status', () => {
         petOne.hunger = 4;
         expect(petOne.fitness >= 3 && petOne.hunger <=5).toBe(true);
     }); 
+});
+describe('feed', () => {
+    it('throws an error if the pet is not alive', () => {
+        const petOne = new Pet('Fido');
+        petOne.age = 30;
+        expect(() => petOne.feed()).toThrow('Your pet is no longer alive!!');
+        // expect(petOne.feed()).toThrow('Your pet is no longer alive :('); Correct way to use toThrow is to 
+        // wrap function to be tested in another callback function so that jest can capture the error
+    });
 });
