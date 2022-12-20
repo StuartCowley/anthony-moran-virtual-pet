@@ -40,7 +40,7 @@ describe('walk', () => {
     }); 
 });
 describe('feed', () => {
-        xit('decreases the hunger by 3', () => {
+        it('decreases the hunger by 3', () => {
               const petOne = new Pet('Fido');
               petOne.hunger = 6;
               petOne.feed();
@@ -94,5 +94,37 @@ describe('feed', () => {
         expect(() => petOne.feed()).toThrow('Your pet is no longer alive!!');
         // expect(petOne.feed()).toThrow('Your pet is no longer alive :('); Correct way to use toThrow is to 
         // wrap function to be tested in another callback function so that jest can capture the error
+    });
+});
+describe('walk', () => {
+    it('throws an error if the pet is not alive', () => {
+        const petOne = new Pet('Fido');
+        petOne.fitness = -1;
+        expect(() => petOne.feed()).toThrow('Your pet is no longer alive!!');
+        // expect(petOne.feed()).toThrow('Your pet is no longer alive :('); Correct way to use toThrow is to 
+        // wrap function to be tested in another callback function so that jest can capture the error
+    });
+});
+describe('growUp', () => {
+    it('throws an error if the pet is not alive', () => {
+        const petOne = new Pet('Fido');
+        petOne.age = 30;
+        expect(() => petOne.feed()).toThrow('Your pet is no longer alive!!');
+        // expect(petOne.feed()).toThrow('Your pet is no longer alive :('); Correct way to use toThrow is to 
+        // wrap function to be tested in another callback function so that jest can capture the error
+    });
+});
+describe('Child Adoption Success', () => {
+    it('throws an error if the child is not alive', () => {
+        const child = new Pet('Amelia');
+        child.age = 30;
+        expect(() => child.feed()).toThrow('Your pet is no longer alive!!');
+    });
+});
+describe('Baby Born Success', () => {
+    it('throws an error if the child is not alive', () => {
+        const baby = new Pet('Billy');
+        baby.age = 30;
+        expect(() => baby.feed()).toThrow('Your pet is no longer alive!!');
     });
 });
