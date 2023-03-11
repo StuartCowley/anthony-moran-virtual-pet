@@ -1,6 +1,6 @@
 Virtual Pet
 
-A JavaScript educational project, completed as part of the Software Development FastTrack course at Command Shift (MCR Codes).
+A JavaScript educational project, completed as part of the Software Development FastTrack course at Command Shift (Manchester Codes).
 
 Table of contents
 General info
@@ -56,4 +56,4 @@ Project created as part of Manchester Codes Software Developer FastTrack Bootcam
 Acknwoldgement to former student Jen Openshaw & Rita Łyczywek for this very useful 'Virtual Pet' README template.
 
 Contact
-Anthony Moran @TonyMCodes, Command Shift (Manchester Codes)
+Anthony Moran @TonyMCodes, Command Shift (Manchester Codes). linkedin.com/in/anthonymmoran

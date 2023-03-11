@@ -2,14 +2,15 @@ const Pet = require('../src/pet');
 
 describe('constructor',() => {
     it('returns an object', () => { 
-        expect(new Pet ('Fido')).toBeInstanceOf(Object);
+        expect(new Pet('Fido')).toBeInstanceOf(Object);
     });
 });
-// describe('returns a name from an instance - my test',() => {       
-//     it('returns a name', () => {
-//         expect(new Pet ('Fido')).toEqual({"name": "Fido"}); //this instance equals more than just name so errors.
-//     });
-// });
+describe('returns a name from an instance',() => {       
+    it('returns the correct name when a new instance is created', () => {
+        const pet = new Pet('Fido');
+        expect(pet.name).toEqual('Fido');
+    });
+});
 describe('constructor', () => {
     it('sets the name property', () => {
       const petOne = new Pet('Fido');
@@ -92,8 +93,6 @@ describe('feed', () => {
         const petOne = new Pet('Fido');
         petOne.age = 30;
         expect(() => petOne.feed()).toThrow('Your pet is no longer alive!!');
-        // expect(petOne.feed()).toThrow('Your pet is no longer alive :('); Correct way to use toThrow is to 
-        // wrap function to be tested in another callback function so that jest can capture the error
     });
 });
 describe('walk', () => {
@@ -101,8 +100,6 @@ describe('walk', () => {
         const petOne = new Pet('Fido');
         petOne.fitness = -1;
         expect(() => petOne.feed()).toThrow('Your pet is no longer alive!!');
-        // expect(petOne.feed()).toThrow('Your pet is no longer alive :('); Correct way to use toThrow is to 
-        // wrap function to be tested in another callback function so that jest can capture the error
     });
 });
 describe('growUp', () => {
@@ -110,8 +107,6 @@ describe('growUp', () => {
         const petOne = new Pet('Fido');
         petOne.age = 30;
         expect(() => petOne.feed()).toThrow('Your pet is no longer alive!!');
-        // expect(petOne.feed()).toThrow('Your pet is no longer alive :('); Correct way to use toThrow is to 
-        // wrap function to be tested in another callback function so that jest can capture the error
     });
 });
 describe('Child Adoption Success', () => {
